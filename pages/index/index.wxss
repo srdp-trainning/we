@@ -1,0 +1,188 @@
+/**index.wxss**/
+.banner{
+  width: 690rpx;
+  height: 241rpx;
+}
+.menu{
+  width: 690rpx;
+
+  /* height: 406rpx; */
+}
+.slide-image{
+  width: 690rpx;
+  height: 241rpx;
+}
+.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom: 60rpx;
+  margin-left: -240rpx;
+}
+.swiper-box .wx-swiper-dot{
+  width: 10rpx;
+  height: 10rpx;
+  display: inline-flex;
+  justify-content:space-between;
+  border-radius: 50%;
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1;  
+    border-radius: 50%;
+}
+.swiper-box .wx-swiper-dot-active::before{
+  background-color: white;
+  border-radius: 50%;  
+}
+.menu-button{
+  width: 120rpx;
+  float: left;
+  margin-right: 66rpx;
+  margin-top: 30rpx;
+}
+.menu .menu-button:nth-child(4){
+  margin-right: 0;
+}
+.menu-button .circle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  background-color: #04A7E5;
+  text-align: center;
+}
+.menu-button .circle image{
+  display: block;
+  width: 63rpx;
+}
+.menu-button .title{
+
+  font-size:20rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  text-align: center;
+  margin-top: 20rpx;
+
+}
+.mainer-bottom{
+  width:750rpx;
+  /* height: 463rpx; */
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx -4rpx 4rpx 0rpx rgba(0, 0, 0, 0.04);
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.schedule-menu{
+  width: 690rpx;
+
+}
+.schedule-title{
+  display: block;
+  font-size:30rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(0,0,0,1);
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+/* .schedule-forenoon,.schedule-afternoon{
+  display: flex;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.schedule-forenoon{
+  
+}
+.schedule-forenoon .title,.schedule-afternoon .title{
+  width:74rpx;
+  height:180rpx;
+  background:rgba(247,247,247,1);
+  border-radius:10rpx;
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.schedule-forenoon .title view,.schedule-afternoon .title view{
+  width: 28rpx;
+  word-wrap: break-word;
+
+} */
+.course{
+  width:284rpx;
+  height:180rpx;
+  background:rgba(121,209,255,1);
+  border-radius:10rpx;
+  margin-left: 24rpx;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.course .course-top{
+  width: 242rpx;
+  margin-bottom: 10rpx;
+  /* height: 40rpx; */
+}
+.course .time{
+  font-size:28rpx;
+  float: left;
+}
+.course .place{
+  font-size:28rpx;
+  float: right;
+}
+.course .classname{
+  width: 242rpx;
+  font-size:22rpx;
+  line-height:30rpx;
+}
+.course .course-bottom{
+  width: 242rpx;
+}
+.course .teachername{
+  font-size:22rpx;
+
+}
+
+.schedule-content .title{
+  width:74rpx;
+  height:180rpx;
+  background:rgba(247,247,247,1);
+  border-radius:10rpx;
+  font-size:28rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+}
+.schedule-content .title view{
+  width: 28rpx;
+  /* height: 57rpx; */
+  word-wrap: break-word;
+
+}
+
+.schedule-content .left{
+  width: 74rpx;
+  float: left;
+}
+.schedule-content .right{
+  width: 616rpx;
+  float: right;
+}
+.schedule-content .right .course{
+  float: left;
+  margin-bottom: 24rpx;
+}

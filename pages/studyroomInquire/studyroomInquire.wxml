@@ -1,0 +1,48 @@
+<!--pages/studyroomInquire/studyroomInquire.wxml-->
+<view class='container'>
+<view class="navbar" style="{{'height: ' + navigationBarHeight}}">
+  <view style="{{'height: ' + statusBarHeight}}"></view>
+  <view class='title-container'>
+    <view class='capsule' wx:if="{{ back || home }}">
+      <view bindtap='back' wx:if="{{back}}">
+        <image src='img/back.svg'></image>            
+      </view>
+      <view bindtap='backHome' wx:if="{{home}}">
+        <image src='img/home.svg'></image>
+      </view>
+    </view>
+    <view class='title'>{{text}}</view>
+  </view>
+</view>
+
+  <view class='banner'>
+    <view class='words'>
+      <picker mode="multiSelector" value="{{currentIndex}}"
+    range="{{currentArray}}" bindchange="currentPickerChange">       
+      
+      <text>当前地点 : {{currentArray[0][currentIndex[0]]}}</text>
+      <text>当前时间 : {{currentArray[1][currentIndex[1]]}}</text>
+      </picker>
+    </view>
+    
+    <image src='../../images/scoreAnalysisBanner.png' mode='widthFix'></image>
+  </view>
+  <view class='mainer'>
+    <view class='mainer-title-x-list'>
+      <view wx:for="{{titlexList}}" >{{item}}</view>
+    </view>
+    <view class='mainer-content'>
+    
+      <view wx:for="{{studyroomList}}" class='classroom-block'>
+        <view class='block1'>{{item.room}}</view>
+        <view class='' wx:for="{{item.course}}">
+          <view class='hasClass block2' wx:if="{{item == 'N'}}">有课</view>
+          <view class='noClass block2' wx:if="{{item == 'Y'}}">空闲</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+</view>
+

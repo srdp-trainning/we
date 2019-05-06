@@ -1,0 +1,41 @@
+<!--pages/scoreAnalysis/scoreAnalysis.wxml-->
+<view class='container'>
+<view class="navbar" style="{{'height: ' + navigationBarHeight}}">
+  <view style="{{'height: ' + statusBarHeight}}"></view>
+  <view class='title-container'>
+    <view class='capsule' wx:if="{{ back || home }}">
+      <view bindtap='back' wx:if="{{back}}">
+        <image src='img/back.svg'></image>            
+      </view>
+      <view bindtap='backHome' wx:if="{{home}}">
+        <image src='img/home.svg'></image>
+      </view>
+    </view>
+    <view class='title'>{{text}}</view>
+  </view>
+</view>
+
+  <view class='banner'>
+    <view class='words'>
+      <text>你好, {{schoolname}}</text>
+      <text>加权平均分:90</text>
+      <text>你还没有挂科哦，继续保持呀~</text>
+    </view>
+    
+    <image src='../../images/scoreAnalysisBanner.png' mode='widthFix'></image>
+  </view>
+  <view class='mainer'>
+    <view class='axis'>
+      <view class='axis-x-title'>加权分</view>
+      <view class='axis-x'></view>
+      <view class='axis-y'></view>
+      <view class='datas' >
+        <view class='data' wx:for="{{array}}">
+          <view class='score'>{{item.score}}</view>
+          <view class='graph' style="height:{{item.score/100*655+'rpx'}}"></view>
+          <view class='axis-y-title'>{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

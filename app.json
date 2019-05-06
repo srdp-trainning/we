@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/studyroomInquire/studyroomInquire",
+    "pages/person/person",
+    "pages/scoreAnalysis/scoreAnalysis",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeOUC",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "课程表"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

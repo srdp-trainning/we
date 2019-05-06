@@ -1,0 +1,80 @@
+/* pages/person/person.wxss */
+
+.banner{
+  width:690rpx;
+  height:240rpx;
+  /* background-color: blue; */
+  position: relative;
+}
+.bannerimage{
+  width:700rpx;
+  height:240rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.person-info{
+  position: absolute;
+  left: 56rpx;
+  right: 56rpx;
+  top: 56rpx;
+  bottom: 56rpx;
+  color: white;
+}
+.person-info .right{
+  float: right;
+}
+.student-image{
+  width:128rpx;
+  height:128rpx;
+  border-radius:15rpx;
+  float: left;
+}
+.student-number,.student-name{
+  font-size:30rpx;
+}
+.student-name{
+  margin-top: 20rpx;
+}
+.blockstyle1{
+  width:690rpx;
+  height:100rpx;
+  background:rgba(247,247,247,1);
+  box-shadow:0px 6rpx 12rpx 0px rgba(0, 0, 0, 0.1);
+  border-radius:15rpx;
+  margin-top: 42rpx;
+  font-size:30rpx;
+}
+.notificate,.thanksandexplain{
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+  justify-content: space-between;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+}
+.notificate view,.thanksandexplain view{
+  margin-left: 54rpx;
+}
+.notificate switch{
+  margin-right: 30rpx;
+}
+.notificate switch{
+    zoom: .65;
+}
+.thanksandexplain{
+
+}
+.remove-binding{
+  position: absolute;
+  bottom: 105rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:690rpx;
+  height:88rpx;
+  background:rgba(233,79,79,1);
+  border-radius:10rpx;
+  color: white;
+  font-weight: 30rpx;
+}

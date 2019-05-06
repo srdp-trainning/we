@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<view class="container">
+ <view class='banner'>
+    <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+ </view>
+ <view class='menu'>
+
+  <view class='menu-button' wx:for="{{array}}">
+    <view class='circle'>
+      <image src='{{item.imageurl}}' mode='widthFix'></image>
+    </view>
+    <view class='title'>{{item.text}}</view>
+   
+  </view>
+ 
+ </view>
+ <!-- <view class='mainer-bottom'>
+    <view class='schedule-menu'>
+      <text class='schedule-title'>今日课表</text>
+      <view>
+        <view class='schedule-forenoon'>
+          <view class='title'><view>上午</view></view>
+          <view class='course'>
+            <view class='clearfix course-top'>
+              <view class='time'>1-2节</view>
+              <view class='place'>6001</view>
+            </view>
+            <view class='classname'>毛泽东思想概论和中国特 色社会主义理论体系概论</view>
+            <view class='course-bottom'>
+              <view class='teachername'>老师名字</view>
+            </view>
+            
+          </view>
+          <view class='course'></view>
+        </view>
+        <view class='schedule-afternoon'>
+          <view class='title'><view>下午</view></view>
+          <view class='course'></view>
+          <view class='course'></view>
+        </view>
+      </view>
+    </view>
+ </view> -->
+ <view class='mainer-bottom'>
+    <view class='schedule-menu'>
+      <text class='schedule-title'>今日课表</text>
+      <view class='schedule-content'>
+        <view class='left'>
+          <view class='title'><view>上午</view></view>
+          <view class='title'><view>下午</view></view>
+          <view class='title'><view>晚上</view></view>
+        </view>
+        <view class='right'>
+          <view class='course'>
+            <view class='clearfix course-top'>
+              <view class='time'>1-2节</view>
+              <view class='place'>6001</view>
+            </view>
+            <view class='classname'>毛泽东思想概论和中国特 色社会主义理论体系概论</view>
+            <view class='course-bottom'>
+              <view class='teachername'>老师名字</view>
+            </view>
+          </view>
+          <view class='course'></view>
+          <view class='course'></view>
+          <view class='course'></view>
+          <view class='course'></view>
+          <view class='course'></view>
+        </view>
+       
+         
+      </view>
+    </view>
+ </view>
+</view>

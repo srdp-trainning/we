@@ -1,0 +1,101 @@
+/* pages/scoreAnalysis/scoreAnalysis.wxss */
+.container{
+  display: block;
+}
+.banner image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  z-index: -5;
+}
+.words text{
+  display: block;
+  color: white;
+  margin-left: 30rpx;
+  margin-top: 26rpx;
+}
+
+.words text:nth-child(1){
+  font-size: 30rpx;  
+
+}
+.words text:nth-child(2){
+  font-size: 30rpx;  
+}
+.words text:nth-child(3){
+  font-size: 28rpx;  
+}
+.mainer{
+  width:750rpx;
+  height:816rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx -4rpx 4rpx 0rpx rgba(0, 0, 0, 0.04);
+  border-radius:25rpx 25rpx 0rpx 0rpx;
+  position: absolute;
+  top: 228rpx;
+ 
+
+}
+.axis{
+  position: relative;
+  margin-left: 30rpx;
+  margin-top: 50rpx;
+}
+.axis-x-title{
+  margin-bottom: 21rpx;
+}
+.axis-x{
+  width:2rpx;
+  height:720rpx;
+  background:rgba(179,179,179,1);
+
+}
+.axis-y{
+  width:690rpx;
+  height:2rpx;
+  background:rgba(179,179,179,1);
+
+}
+.axis-x-title{
+  font-size:24rpx;
+  color:rgba(77,77,77,1);
+}
+.axis-y-title{
+  font-size:24rpx;
+  color:rgba(77,77,77,1);
+}
+.axis-y-title text{
+  margin-right: 14rpx;
+}
+.axis-y-title text:nth-child(1){
+  margin-left: 27rpx;
+}
+.axis .datas{
+  position: absolute;
+  bottom: -43rpx;
+  display: flex;
+  align-items: flex-end;
+}
+.axis .data{
+
+  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 10rpx; */
+}
+.axis .graph{
+  width:30rpx;
+  height:655rpx;
+  background:rgba(121,209,255,1);
+
+}
+.axis .axis-y-title{
+  margin-top: 13rpx;
+}
+.axis .score{
+  font-size:20rpx;
+  margin-bottom: 21rpx;
+}

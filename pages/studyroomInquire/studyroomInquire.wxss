@@ -1,0 +1,83 @@
+/* pages/studyroomInquire/studyroomInquire.wxss */
+.container{
+  display: block;
+}
+.banner image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  z-index: -5;
+}
+.words text{
+  display: block;
+  color: white;
+  margin-left: 30rpx;
+  margin-top: 26rpx;
+}
+
+.words text:nth-child(1){
+  font-size: 30rpx;  
+
+}
+.words text:nth-child(2){
+  font-size: 30rpx;  
+}
+.words text:nth-child(3){
+  font-size: 28rpx;  
+}
+.mainer{
+  width:670rpx; 
+  height:816rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx -4rpx 4rpx 0rpx rgba(0, 0, 0, 0.04);
+  border-radius:25rpx 25rpx 0rpx 0rpx;
+  position: absolute;
+  top: 228rpx;
+  padding: 35rpx 40rpx 0rpx 40rpx;
+}
+.mainer-title-x-list{
+  /* width: 580rpx; */
+  display: flex;
+  justify-content:space-between;
+  font-size:24rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(77,77,77,1);
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+.classroom-block{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.block1{
+  width:72rpx;
+  height:48rpx;
+  line-height: 48rpx;
+  background:rgba(247,247,247,1);
+  border-radius:10rpx;
+  font-size:24rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  text-align: center;
+}
+.block2{
+  width:108rpx;
+  height:48rpx;
+  line-height: 48rpx;
+  border-radius:10rpx;
+  font-size:25rpx;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:white;
+  text-align: center;
+}
+.hasClass{
+  background-color: #FBA7A6;
+}
+.noClass{
+  background-color: #79D1FF;
+}

@@ -1,0 +1,22 @@
+<!--pages/person/person.wxml-->
+<view class='container'>
+  <view class='banner'>
+    <image src="../../images/personbanner.png" class='bannerimage' mode='widthFix'></image>
+    <view class='person-info'>
+      <view class='student-image'><open-data type="userAvatarUrl"></open-data></view>
+      <view class='right'>
+        <view class='student-number'>17020031006</view>
+        <view class='student-name'>陈芋圆</view>
+      </view>
+      
+    </view>
+  </view>
+  <view class='notificate blockstyle1'>
+    <view>成绩通知</view>
+    <switch checked bindchange="switch1Change" />
+  </view>
+  <view class='thanksandexplain blockstyle1'>
+    <view>致谢与说明</view>
+  </view>
+  <view class='remove-binding'><view>解除绑定</view></view>
+</view>
