@@ -1,0 +1,12 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+  <view class='title'>欢迎使用ITOUC</view>
+  <view class='logo'></view>
+  <view class='studentnumber'>
+    <input class='inputStyle1' placeholder='请输入学号' placeholder-class="placeholderStyle" bindinput="bindSNumberInput"></input>
+  </view>
+  <view class='password'>
+    <input class='inputStyle1' placeholder='请输入教务处查询密码' placeholder-class="placeholderStyle" bindinput="bindPwdInput" password="true"></input>
+  </view>
+  <button class='bindbutton' bindtap='handleBindButtonClick'>绑定</button>
+</view>

@@ -1,54 +1,47 @@
-// pages/person/person.js
+// pages/search/search.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isUserLogin:'',
-    studentNumber:'',
-    switch1:false
-  },
-  switch1Change(e) {
-    this.setData({
-      switch1:e.detail.value
-    })
-    // console.log('switch1 发生 change 事件，携带值为', e.detail.value)
-  },
-  loginTap:function(){
-    wx.navigateTo({
+    
+    inputName: ''
 
-        url: '../../pages/login/login',
-      })
   },
-  removeBinding:function(){
-    wx.showLoading({
-      title: '解除绑定中',
-    })
-    wx.clearStorageSync("username");
-    wx.clearStorageSync("usertoken");
-    getApp().globalData.isUserLogin = false;
+  //输入实验室名字触发
+  instrumentInput: function (e) {
     this.setData({
-      isUserLogin:false
+      inputName: e.detail.value
     })
+  },
+
+  // ip + '/user/FindInstrumentWithName?name=' + content
+  //搜索功能触发
+  searchClick: function (e) {
+    let val = this.data.inputName;
+    let pages = getCurrentPages(); // 获取页面栈
+    let currPage = pages[pages.length - 1]; // 当前页面
+    let prevPage = pages[pages.length - 2]; // 上一个页面
+    prevPage.setData({
+      inputdata: val 
+    })
+    wx.navigateBack({
+      delta: 1
+    })
+    prevPage.searchClick();
     
-    setTimeout(()=>{
-      wx.switchTab({
-        url: '../../pages/index/index',
-      })
-      wx.hideLoading();
-    },1000)
-    
-   
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      isUserLogin: getApp().globalData.isUserLogin,
-      studentNumber:wx.getStorageSync("username")
+      inputName:options.inputName
     })
+  
+    
+
   },
 
   /**
@@ -62,7 +55,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+
   },
 
   /**

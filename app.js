@@ -32,8 +32,18 @@ App({
         }
       }
     })
+
+
+    //先从本地缓存里找相关账户信息帮助其登录，如果不存在即回到未登录状态
+    if(wx.getStorageSync("username") != ""){
+      this.globalData.isUserLogin = true;
+    }
+
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    isUserLogin:false,
+    ip: 'https://uclass.ktchen.cn:442',
+    
   }
 })

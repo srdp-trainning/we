@@ -137,8 +137,10 @@
   float: left;
 }
 .course .place{
+  /* width: 150rpx; */
   font-size:28rpx;
   float: right;
+  /* word-wrap: break-word; */
 }
 .course .classname{
   width: 242rpx;

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -14,7 +14,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
-	"appid": "wx8862d41dad5a37ca",
+	"appid": "wxbf23fb5ffb658b2f",
 	"projectname": "weouc",
 	"debugOptions": {
 		"hidedInDevtools": []

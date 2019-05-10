@@ -2,7 +2,12 @@
 .container{
   display: block;
 }
-.banner image{
+.editImage{
+  width: 26rpx;
+  margin-top:30rpx;
+  margin-left: -40rpx;
+}
+.bannerImage2{
   position: absolute;
   top: 0;
   left: 0;
@@ -23,12 +28,17 @@
 .words text:nth-child(2){
   font-size: 30rpx;  
 }
-.words text:nth-child(3){
-  font-size: 28rpx;  
+/* .banner .words{
+  display: flex;
+  
+} */
+.blockStyle3{
+  display: flex;
 }
+
 .mainer{
   width:670rpx; 
-  height:816rpx;
+  /* height:816rpx; */
   background:rgba(255,255,255,1);
   box-shadow:0rpx -4rpx 4rpx 0rpx rgba(0, 0, 0, 0.04);
   border-radius:25rpx 25rpx 0rpx 0rpx;
@@ -44,13 +54,25 @@
   font-family:MicrosoftYaHei;
   font-weight:400;
   color:rgba(77,77,77,1);
-  margin-left: 10rpx;
-  margin-right: 10rpx;
+  /* padding-right: 20rpx; */
+}
+
+.mainer-title-x-list > view{
+  width:108rpx;
+  text-align: center;
+
+}
+.mainer-title-x-list > view:nth-child(1){
+  width: 72rpx;
+}
+.mainer-content{
+  /* padding : 0 0 10rpx 0; */
 }
 .classroom-block{
   display: flex;
   justify-content: space-between;
-  margin-top: 20rpx;
+  margin-top: 25rpx;
+  /* padding-right: 20rpx; */
 }
 .block1{
   width:72rpx;
@@ -80,4 +102,13 @@
 }
 .noClass{
   background-color: #79D1FF;
+}
+.mainer-content-inner{
+  height: 945rpx;
+  
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }

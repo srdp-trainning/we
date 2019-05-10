@@ -1,0 +1,30 @@
+<!--pages/timetable/timetable.wxml-->
+<view class='container'>
+  <view class='words'>
+    <picker mode="selector" value="{{pickerIndex}}"
+    range="{{currentArray}}" bindchange="currentPickerChange">       
+        <text>第{{currentArray[pickerIndex]}}周</text>
+        <image src='../../images/edit.png' mode='widthFix' class='editImage'></image>
+    </picker>
+      
+  
+  </view>
+  <view class='mainer'>
+    <view class='mainer-title-x-list'>
+      <view class='month'><text>4月</text></view>
+      <view class='everyday' wx:for="{{weekList}}" wx:key="{{index}}">
+        <text>{{item.week}}</text>
+        <text>{{item.date}}号</text>
+      </view>
+    </view>
+    <view class="mainer-title-y-list" >
+      <view wx:for="{{axisyList}}" wx:key="{{index}}">{{item}}</view>  
+    </view>
+    <view class='mainer-content'>
+      <view class='course-item' wx:for="{{courseList}}" style="height:{{item.skcd*120}}rpx;left:{{(item.day-1)*(94 + 6) }}rpx;top:{{(item.skjc-1)*(120+6)}}rpx">
+        <text>{{item.className}}</text>
+        <text>@{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+</view>

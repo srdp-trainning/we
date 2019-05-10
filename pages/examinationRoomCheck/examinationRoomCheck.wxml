@@ -1,0 +1,46 @@
+<!--pages/examinationRoomCheck/examinationRoomCheck.wxml-->
+<view class='container'>
+<view class="navbar" style="{{'height: ' + navigationBarHeight}}">
+  <view style="{{'height: ' + statusBarHeight}}"></view>
+  <view class='title-container'>
+    <view class='capsule' wx:if="{{ back || home }}">
+      <view bindtap='back' wx:if="{{back}}">
+        <image src='img/back.svg'></image>            
+      </view>
+      <view bindtap='backHome' wx:if="{{home}}">
+        <image src='img/home.svg'></image>
+      </view>
+    </view>
+    <view class='title'>{{text}}</view>
+  </view>
+</view>
+
+  <view class='banner'>
+    <view class='words'>
+      <text>姓名：{{schoolName}}</text>
+      <text>学号：{{schoolNumber}}</text>
+      <text>当前学期：2019春季学期</text>
+    </view>
+    
+    <image src='../../images/scoreAnalysisBanner.png' mode='widthFix'></image>
+  </view>
+  <view class='mainer'>
+    <view  class='course'>
+      <view class='course-block'>
+        <view class='course-name'>毛泽东思想概论和中国特色社会主义理论体系概论</view>
+        <view class='classroom'>6001</view>
+      </view>
+      <view class='course-block'>
+        <view class='course-time'>
+          时间：
+          <text>7月1日</text>
+          <text>9:30-11:00</text>
+        </view>
+        <view class='seat-number'>座位号：12</view>
+        <view class='teacher'>教师：黄胜</view>
+      </view>
+
+    </view>
+  </view>
+</view>
+

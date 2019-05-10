@@ -1,0 +1,143 @@
+/* pages/scheduleCourseList/scheduleCourseList.wxss */
+.container{
+  display: block;
+  padding-top: 50rpx;
+}
+page{
+ background-color: #F5F6F8;
+}
+button{
+  padding: 0px;
+}
+.search_lab_wrap{
+  padding: 0px 30rpx 0px 30rpx;
+  position: relative;
+}
+.search_lab_inner{
+  display: flex;
+  align-items: center;
+  height: 32px;
+  border-radius: 5rpx ;
+  padding: 0px 16rpx 0px 16rpx;
+  border: 1px solid #cccccc;
+
+}
+.search_lab_input{
+  flex-grow: 1;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 8rpx;
+  order: 2;
+
+}
+.search_lab_wrap image{
+  display: block;
+  width:20px;
+  height: 20px;
+  order: 1;
+}
+
+.lab_list{
+  padding: 40rpx 30rpx 0rpx 30rpx;
+}
+.lab_list_item{
+
+
+  display: flex;
+  min-height: 100%;
+  background-color: white;
+  border-radius: 4rpx;
+  padding: 30rpx;
+
+  align-items:center;
+  transition:opacity .3s;
+
+  
+}
+.lab_list_item_text
+{
+  flex: 1;
+}
+.lab_list_item .title
+{
+  display: block;
+  font-family:SimHei;
+  font-size:32rpx;
+}
+.lab_list_item .description
+{
+  display: block;
+  font-family:SimHei;
+  font-size:28rpx;
+  color:#757373;
+
+}
+.check_text
+{
+ font-family:SimHei;
+  font-size:28rpx;
+  color:dodgerblue;
+}
+.lab_list image
+{
+  margin-left:5px;
+  width:14px;
+  height:14px;
+
+}
+
+.nodata{
+  text-align: center;
+  margin-top: 100rpx;
+  color:#757373;
+}
+.choosebutton{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #405F7F;
+  color: white;
+  
+  height:90rpx;
+  line-height:94rpx;
+  text-align:center;
+
+
+
+}
+
+.mainer{
+  margin-bottom: 118rpx;
+}
+
+.choose-cover{
+  position: fixed;
+  width: 750rpx;
+  height: 700rpx;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+}
+.teacher-content-wrap{
+  width: 750rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.teacherlist{
+  margin-left: 16rpx;
+  border:1rpx solid black;
+}
+.coursetime-cotent-wrap{
+  width: 750rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.coursetimelist{
+  margin-left: 16rpx;
+  border:1rpx solid black;
+}
+.chosen-style1{
+  background-color: red;
+}

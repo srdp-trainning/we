@@ -17,29 +17,42 @@
 
   <view class='banner'>
     <view class='words'>
-      <picker mode="multiSelector" value="{{currentIndex}}"
-    range="{{currentArray}}" bindchange="currentPickerChange">       
+    <!-- <view>
+      <text>当前时间 : {{currentArray[0][currentIndex[0]]}}</text>
+      <text>当前地点 : {{currentArray[1][currentIndex[1]]}}</text>
+    </view> -->
       
-      <text>当前地点 : {{currentArray[0][currentIndex[0]]}}</text>
-      <text>当前时间 : {{currentArray[1][currentIndex[1]]}}</text>
-      </picker>
+    <picker mode="multiSelector" value="{{currentIndex}}"
+    range="{{currentArray}}" bindchange="currentPickerChange">
+      <view class='blockStyle3'>      
+        <view>
+          <text>当前时间 : {{currentArray[0][currentIndex[0]]}}</text>
+          <text>当前地点 : {{currentArray[1][currentIndex[1]]}}</text>
+        </view>
+        <image src='../../images/edit.png' mode='widthFix' class='editImage'></image>
+      </view>
+    </picker>
+    
     </view>
     
-    <image src='../../images/scoreAnalysisBanner.png' mode='widthFix'></image>
+    <image src='../../images/scoreAnalysisBanner.png' mode='widthFix' class='bannerImage2'></image>
   </view>
   <view class='mainer'>
     <view class='mainer-title-x-list'>
-      <view wx:for="{{titlexList}}" >{{item}}</view>
+      <view wx:for="{{titlexList}}" wx:key="{{index}}" >{{item}}</view>
     </view>
     <view class='mainer-content'>
-    
-      <view wx:for="{{studyroomList}}" class='classroom-block'>
+      <scroll-view scroll-y class='mainer-content-inner' style="height:{{scrollHeight}}rpx" 
+      scroll-top="100">
+      <view wx:for="{{studyroomList}}" class='classroom-block' wx:key="{{index}}">
         <view class='block1'>{{item.room}}</view>
-        <view class='' wx:for="{{item.course}}">
+        <view class='' wx:for="{{item.course}}" wx:key="{{index}}">
           <view class='hasClass block2' wx:if="{{item == 'N'}}">有课</view>
           <view class='noClass block2' wx:if="{{item == 'Y'}}">空闲</view>
         </view>
       </view>
+      </scroll-view>
+      
     </view>
   </view>
 

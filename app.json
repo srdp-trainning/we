@@ -1,30 +1,50 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/timetable/timetable",
+    
     "pages/studyroomInquire/studyroomInquire",
+    
+    
+    "pages/scheduleCourseList/scheduleCourseList",
+    "pages/examinationRoomCheck/examinationRoomCheck",
+    
+    
+    "pages/search/search",
     "pages/person/person",
     "pages/scoreAnalysis/scoreAnalysis",
-    "pages/index/index",
+    
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeOUC",
+    "navigationBarTitleText": "ITOUC",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "selectedColor": "black",
+        "iconPath": "./images/index1.png",
+        "selectedIconPath":"./images/index2.png"
       },
       {
-        "pagePath": "pages/index/index",
-        "text": "课程表"
+        "pagePath": "pages/timetable/timetable",
+        "text": "课程表",
+        "selectedColor":"black",
+        "iconPath": "./images/schedule1.png",
+        "selectedIconPath": "./images/schedule2.png"
       },
       {
         "pagePath": "pages/person/person",
-        "text": "个人"
+        "text": "个人",
+        "selectedColor": "black",
+        "iconPath": "./images/person1.png",
+        "selectedIconPath": "./images/person2.png"
       }
     ]
   },
