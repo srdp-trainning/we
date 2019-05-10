@@ -19,15 +19,15 @@
 
 .info_list_item{
   width:730rpx;
-  margin-left:50rpx;
+  /* margin-left:50rpx;
   margin-right: 50rpx;
-  margin-top: 50rpx;
+  margin-top: 50rpx; */
   background: rgba(255,255,255,0.6);
   color: rgba(0,0,0,1);
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row;
   
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
 }
 
 .item-title .item-author{
@@ -36,7 +36,23 @@
   justify-content: center;
 }
 
+
 .item-text{
   margin-left: 5e0rpx;
   width: 600rpx;
+}
+
+
+.list{
+  width: 700rpx;
+  padding:20rpx 0 20rpx 0;
+  background-color: greenyellow;
+  border-radius: 20rpx;
+  margin-top: 30rpx;
+}
+.list-title{
+  text-align: center;
+}
+.list-text{
+  padding: 20rpx;
 }

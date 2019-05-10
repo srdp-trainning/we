@@ -14,4 +14,15 @@
       </view>
     </view>
   </view>
+
+
+
+  <view class='list' wx:for="{{info_list}}">
+      <view  class='list-title'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='list-text'>
+        <text>{{item.text}} </text>
+      </view>
+    </view>
 </view>
