@@ -5,7 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    info_list:[
+      {
+        title:'first',
+        author:'me',
+        text:'test' 
+      },
+      {
+        title:'second',
+        author:'you',
+        text:'test2'
+      },
+      {
+        title:'third'
+      }
+    ]
   },
 
   /**

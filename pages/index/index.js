@@ -31,6 +31,11 @@ Page({
       {
         text:'自动排课',
         imageurl:'../../images/autoschedule.png'
+      },
+      {
+        text:'通知信息',
+        imageurl:'../../images/autoschedule.png',
+        url:'../../pages/test/test'
       }
 
     ],

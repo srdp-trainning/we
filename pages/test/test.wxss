@@ -1,1 +1,42 @@
 /* pages/test/test.wxss */
+
+.banner{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 690rpx;
+  height: 241rpx;
+}
+
+.title{
+  margin-left: 270rpx;
+}
+
+.info_list{
+  flex-direction: row;
+   background:rgba(121,209,255,1);
+}
+
+.info_list_item{
+  width:730rpx;
+  margin-left:50rpx;
+  margin-right: 50rpx;
+  margin-top: 50rpx;
+  background: rgba(255,255,255,0.6);
+  color: rgba(0,0,0,1);
+  display: flex;
+  flex-direction: row;
+  
+  flex-wrap: wrap;
+}
+
+.item-title .item-author{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-text{
+  margin-left: 5e0rpx;
+  width: 600rpx;
+}

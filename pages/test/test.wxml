@@ -1,2 +1,17 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<view class='container'>
+  <view class='banner'>
+    <text class='title'>信息列表</text>
+  </view>
+  
+  <view class='info_list'>
+    <view class='info_list_item' wx:for="{{info_list}}">
+      <view  class='item-title'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='item-text'>
+        <text>{{item.text}} </text>
+      </view>
+    </view>
+  </view>
+</view>
