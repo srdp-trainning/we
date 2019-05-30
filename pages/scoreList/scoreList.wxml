@@ -1,0 +1,20 @@
+<!--pages/scoreList/scoreList.wxml-->
+<view class='container'>
+  <view class='banner'>
+    <text class='title'>成绩列表</text>
+  </view>
+  <view class='list' wx:for="{{info_list}}" wx:for-index='index' style='background-color: {{color[index%3]}}'>
+      <view  class='list-title' data-id='{{index}}' catchtap='open_tab' style='background-color: {{title_color[index%3]}}'>
+        <text>{{item.className}}</text>
+      </view>
+      <view class='list-text'  data-id='{{index}}'  catchtap='open_tab'>
+        <text class='list-abstract-text'>分数:{{item.score}} </text>
+        <text wx:if="{{item.open}}">{{'\n课程类型:' + item.classType}} </text>
+        <text wx:if="{{item.open}}">{{'\n学分:' + item.credit}} </text>
+        <text wx:if="{{item.open}}">{{'\n修习类型:' + item.studyType}} </text>
+        <text wx:if="{{item.open}}">{{'\n学习时间:' + item.semester}} </text>
+      </view>
+  </view>
+
+  <text>{{msg}}</text>
+</view>

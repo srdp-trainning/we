@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ip:'https://uclass.ktchen.cn:442/uclass',
+    ip:getApp().globalData.ip,
     studentNumber:'',
     password:''
   },

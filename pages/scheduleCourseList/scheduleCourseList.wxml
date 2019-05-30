@@ -11,7 +11,7 @@
   </view>
     <view wx:if="{{!IsSearchData}}" class='nodata'>没有搜索到相关结果</view>
     <view wx:for="{{array}}" wx:key="{{item.id}}">
-      <view class="lab_list" bindtap="labClick" wx:key="{{item.id}}" data-id="{{item.id}}">
+      <view class="lab_list" bindtap="labClick" wx:key="{{item.id}}" data-id="{{item.id}}" data-name="{{item.title}}">
         <view class="lab_list_item">
           <view class="lab_list_item_text">
             <text class="id" style='display:none'>{{item.id}}</text>
@@ -25,24 +25,51 @@
         </view>
       </view>
     </view>
+     </view>
     <!-- <view wx:if="{{IsAll}}" class='hasAll'>已经到底啦！</view> -->
-    <view class='choose-cover'>
+    <view class='choose-cover {{IsCoverOpen == true ? "an" : ""}}'  >
     <view bindtap='closeCoverClick'>关闭</view>
-    <view class='teacher-part'>
+
+    <view class='chooselist'>
+    <checkbox-group bindchange="checkboxChange">
+      <scroll-view scroll-y class='mainer-content-inner' style="height:{{scrollHeight}}rpx" 
+      scroll-top="100">
+      <view class='chooselist-item'  wx:for="{{teacherlists}}" data-id="{{item.id}}" data-index="{{item.index}}" bindtap='handleChooselistItemClick'>
+      <checkbox value="{{item.index}}" checked="{{item.checked}}"/>
+        <!-- <view>{{item.teacher}} {{item.time}}</view> -->
+        <view class='right'>
+          <text class='teacher'>{{item.teacher}}</text>
+          <view wx:for="{{item.time}}">
+          <text class='course-name'>{{item}}</text>
+          </view>
+        </view>
+
+      </view>
+     </scroll-view>
+     </checkbox-group>
+
+    </view>
+    <view class='button-wrap' bindtap='addToScheduleCart'>
+      <!-- <view class='left'></view> -->
+      <!-- <view class='right'></view> -->
+      加入选项
+     </view>
+      
+    <!-- <view class='teacher-part'>
         <view>老师</view>
         <view class='teacher-content-wrap'>
           <view wx:for="{{teacherlists}}" wx:key="{{index}}" class='teacherlist {{item.addclass}}' bindtap='teacherlistChoose'data-index="{{index}}">
             <view class=''>{{item.name}}</view>
           </view>
         </view>
-    </view>
-    <view class='coursetime-part'>
+    </view> -->
+    <!-- <view class='coursetime-part'>
       <view>课程时间</view>
       <view class='coursetime-cotent-wrap'>
         <view wx:for="{{coursetimelists}}" wx:key="{{index}}" class='coursetimelist {{item.addclass}}' bindtap='coursetimeChoose'>
             <view class=''>{{item.time}}</view>
           </view>
       </view>
-    </view>
-    </view>
+    </view> -->
+   
 </view>

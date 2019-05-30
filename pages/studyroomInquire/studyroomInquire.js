@@ -5,27 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ip:getApp().globalData.ip,
-    currentLocation:'当前地点',
-    currentDay:'当前时间',
-    locationList:[],
-    dayList:[],
-    titlexList:["教室","1-2节","3-4节","5-6节","7-9节","10-12节"],
-  
-    studyroomList:[
+    ip: getApp().globalData.ip2,
+    currentLocation: '当前地点',
+    currentDay: '当前时间',
+    locationList: [],
+    dayList: [],
+    titlexList: ["教室", "1-2节", "3-4节", "5-6节", "7-9节", "10-12节"],
+
+    studyroomList: [
 
     ],
-    currentArray:[
-      ["今天","明天","后天"],
+    currentArray: [
+      ["今天", "明天", "后天"],
       ["鱼山旧教", "鱼山新教", "崂山二区", "崂山三区", "崂山四区", "崂山五区", "崂山六区", "崂山七区", "崂山八区"]
     ],
-    currentIndex:[0,0,0], //记录选项，要考虑用缓存
-    scrollHeight:0    //scroll区域高度
+    currentIndex: [0, 0, 0], //记录选项，要考虑用缓存
+    scrollHeight: 0    //scroll区域高度
   },
   /**
    * 计算json长度
    */
-  calJsonLen:function(obj){
+  calJsonLen: function (obj) {
     let size = 0, key;
     for (key in obj) {
       if (obj.hasOwnProperty(key)) size++;
@@ -36,7 +36,7 @@ Page({
    * 记录发生改变的地点时间
    */
   currentPickerChange(e) {
-    
+
     this.setData({
       currentIndex: e.detail.value
     })
@@ -46,18 +46,18 @@ Page({
   /**
    * 获取空教室列表
    */
-  getStudyroomList(){
+  getStudyroomList() {
     wx.showLoading({
       title: '加载中',
     })
     let that = this;
     wx.request({
       url: this.data.ip + '/class_info/GetBlankClassRoom?'
-                            +'delta_day='+ this.data.currentIndex[0] + '&'
-                            +'area_code=' + this.data.currentIndex[1] ,
-      type:'get',
-      success:function(res){
-        
+        + 'delta_day=' + this.data.currentIndex[0] + '&'
+        + 'area_code=' + this.data.currentIndex[1],
+      type: 'get',
+      success: function (res) {
+
         //这是用的key value的方式
         let key, obj = res.data;
         let array = [];
@@ -77,21 +77,21 @@ Page({
           }
         }
         that.setData({
-          studyroomList:array
+          studyroomList: array
         })
-        wx.hideLoading();  
-        
+        wx.hideLoading();
+
       },
-      fail:function(){
+      fail: function () {
         //失败了怎么操作
-        wx.hideLoading();  
+        wx.hideLoading();
       }
     })
   },
   /**
    * 获取scroll区域的高度
    */
-  getScrollHeight:function(){
+  getScrollHeight: function () {
     let that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -101,7 +101,7 @@ Page({
         let height = clientHeight * ratio;
         let temp = height - 295;
         that.setData({
-          scrollHeight:temp
+          scrollHeight: temp
         })
       }
     });

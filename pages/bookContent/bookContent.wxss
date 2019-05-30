@@ -1,0 +1,50 @@
+/* pages/bookContent/bookContent.wxss */
+.container{
+  display: block;
+}
+.book-detail{
+  padding: 0 32rpx 0 32rpx;
+  display: flex;
+  
+  /* justify-content: space-between */
+}
+.book-detail image{
+  width: 160rpx;
+}
+.book-detail .right{
+  display: flex;
+  margin-left: 32rpx;
+  align-items: center;
+ 
+  
+}
+.book-detail .title{
+  font-size: 28rpx;
+}
+.style1{
+  font-size: 24rpx;
+  margin-top: 8rpx;
+
+  color: rgb(149, 149,149);
+}
+.list-item{
+  padding-top: 16rpx;
+  padding-bottom: 16rpx;
+}
+.list-item .bookNum{
+  font-size: 30rpx;
+}
+.collection-detail{
+  padding: 0 32rpx 0 32rpx;
+  margin-top: 32rpx;
+}
+.collection-detail .title{
+  font-size: 20rpx;
+  padding: 8rpx 0 8rpx 0;
+}
+.list-item{
+  border-top:1rpx solid rgb(149, 149,149);
+}
+image{
+  height: auto;
+}

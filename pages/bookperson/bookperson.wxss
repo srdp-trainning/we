@@ -1,4 +1,4 @@
-/* pages/person/person.wxss */
+/* pages/bookperson/bookperson.wxss */
 
 .banner{
   width:690rpx;
@@ -44,6 +44,19 @@
   border-radius:15rpx;
   margin-top: 42rpx;
   font-size:30rpx;
+
+
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+  justify-content: space-between;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+
+   
+}
+.blockstyle1 view{
+  margin-left: 54rpx;
 }
 .notificate,.thanksandexplain{
   display: flex;
@@ -80,19 +93,3 @@
 }
 
 
-.login-requirement{
-  background: rgba(111,199,245,1);
-  
-  height: 100rpx;
-  padding: 0 30rpx 0 30rpx;
-  width: 600rpx;
-  border-radius: 20rpx;
-  text-align: center;
-  font-size: 60rpx;
-}
-
-.login-requirement-fa{
-  display: flex;
-  /* flex-direction: column; */
-  width: 600rpx;
-}

@@ -1,6 +1,6 @@
-<!--pages/person/person.wxml-->
+<!--pages/bookperson/bookperson.wxml-->
 <view class='container'>
-  <view wx:if="{{isUserLogin}}">
+  <!-- <view wx:if="{{isUserLogin}}"> -->
     <view class='banner'>
       <image src="../../images/personbanner.png" class='bannerimage' mode='widthFix'></image>
       <view class='person-info'>
@@ -12,18 +12,18 @@
         
       </view>
     </view>
-    <view class='notificate blockstyle1'>
-      <view>成绩通知</view>
-      <switch checked="{{switch1}}" bindchange="switch1Change" />
+
+    <view class='blockstyle1' bindtap='handleBorrowList'>
+      <view>个人借阅列表</view>
     </view>
-    <view class='thanksandexplain blockstyle1'>
-      <view>致谢与说明</view>
+    <view class='blockstyle1' bindtap='handleHistoryList'>
+      <view>个人借阅历史列表</view>
     </view>
-    <view class='remove-binding' bindtap='removeBinding'><view>解除绑定</view></view>
+    <!-- <view class='remove-binding' bindtap='removeBinding'><view>解除绑定</view></view> -->
   </view>
   <view class='login-requirement-fa'>
-    <view class='login-requirement' wx:if="{{!isUserLogin}}" bindtap='loginTap'>
+    <!-- <view class='login-requirement' wx:if="{{!isUserLogin}}" bindtap='loginTap'>
       <text>前往登录</text>
-    </view>
-  </view>
+    </view> -->
+  <!-- </view> -->
 </view>

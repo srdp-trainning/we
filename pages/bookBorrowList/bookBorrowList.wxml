@@ -1,0 +1,65 @@
+<!--pages/bookBorrowList/bookBorrowList.wxml-->
+<view class="container">
+ 
+    <view wx:if="{{!IsSearchData}}" class='nodata'>没有搜索到相关结果</view>
+    <view wx:for="{{booklists}}" wx:key="{{item.id}}">
+      <view class="lab_list" bindtap="bookClick" wx:key="{{item.id}}" data-id="{{item.id}}" data-barCode="{{item.barCode}}">
+        <view class="lab_list_item">
+          <view class="lab_list_item_text">
+            <text class="id" style='display:none'>{{item.num}}</text>
+            <text class="title">{{item.mTitle}}</text>
+            <!-- <text class='bookLendFlag style1'>借出：{{item.bookLendFlag}}</text> -->
+            <text class='renewTimes style1'>续借次数：{{item.renewTimes}}</text>
+            <text class='lendDate style1'>借书日期：{{item.lendDate}}</text>
+            <text class='normRetDate style1'>还书日期：{{item.normRetData}}</text>
+            <text class='callNo'>{{item.mCallNo}}/</text>
+            <!-- <text class='marcRecNo'>{{item.marcRecNo}}/</text> -->
+            <text class='num'>{{item.num}}/</text>
+            <text class='author'>{{item.mAuthor}}./</text>
+            <text class='lend'>{{item.lendAvl}}</text>
+
+
+          </view>
+          <view class="check_text">
+            续借
+          </view>
+          <!-- <image src="../../pages/images/lab_logo.png"></image> -->
+        </view>
+      </view>
+    </view>
+    <!-- <view wx:if="{{IsAll}}" class='hasAll'>已经到底啦！</view> -->
+    <!-- <view class='choose-cover'>
+    <view bindtap='closeCoverClick'>关闭</view>
+    <view class='teacher-part'>
+        <view>老师</view>
+        <view class='teacher-content-wrap'>
+          <view wx:for="{{teacherlists}}" wx:key="{{index}}" class='teacherlist {{item.addclass}}' bindtap='teacherlistChoose'data-index="{{index}}">
+            <view class=''>{{item.name}}</view>
+          </view>
+        </view>
+    </view>
+    <view class='coursetime-part'>
+      <view>课程时间</view>
+      <view class='coursetime-cotent-wrap'>
+        <view wx:for="{{coursetimelists}}" wx:key="{{index}}" class='coursetimelist {{item.addclass}}' bindtap='coursetimeChoose'>
+            <view class=''>{{item.time}}</view>
+          </view>
+      </view>
+    </view>
+    </view> -->
+    <!-- <view class='bottom-tab'>
+      <navigator url=''>
+        <view class='list-tab' >
+            列表
+        </view>
+      </navigator>
+      <navigator url=''>
+        <view class='list-tab' >
+            个人
+        </view>
+      </navigator>
+       
+    </view> -->
+</view>
+
+

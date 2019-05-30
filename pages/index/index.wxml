@@ -11,16 +11,21 @@
   
  </view>
  <view class='menu'>
-
-  <view class='menu-button' wx:for="{{array}}">
-    <navigator open-type='navigateTo' url='{{item.url}}' hover-class="btn-hover">
-      <view class='circle'>
-        <image src='{{item.imageurl}}' mode='widthFix'></image>
-      
-      </view>
-    <view class='title'>{{item.text}}</view>
+  <view class='menu-button' wx:for="{{displayItem}}">
+    <block wx:if="{{index==7}}"> 
+        <button class='circle'catchtap='moreFunction'>
+          <image src='{{array[item].imageurl}}' mode='widthFix'></image>
+        </button>
+        <view class='title'>{{array[item].text}}</view>
+    </block>
+    <block wx:else>
+    <navigator open-type='navigateTo' url='{{array[item].url}}' hover-class="btn-hover">
+        <view class='circle'>
+          <image src='{{array[item].imageurl}}' mode='widthFix'></image>
+        </view>
+        <view class='title'>{{array[item].text}}</view>
     </navigator>
-   
+    </block>
   </view>
  
  </view>

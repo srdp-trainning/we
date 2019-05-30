@@ -1,22 +1,28 @@
 {
   "pages": [
-    "pages/test/test",
     "pages/index/index",
-    
-    "pages/login/login",
-    "pages/timetable/timetable",
-    
-    "pages/studyroomInquire/studyroomInquire",
-    
-    
     "pages/scheduleCourseList/scheduleCourseList",
-    "pages/examinationRoomCheck/examinationRoomCheck",
-    
-    
-    "pages/search/search",
-    "pages/person/person",
+   
     "pages/scoreAnalysis/scoreAnalysis",
     
+   
+  
+    "pages/bookBorrowList/bookBorrowList",
+    "pages/bookHistoryList/bookHistoryList",
+    "pages/bookperson/bookperson",
+    "pages/bookList/bookList",
+    "pages/bookContent/bookContent",
+
+    "pages/scoreList2/scoreList2",   
+    "pages/scoreList/scoreList",
+    "pages/test/test",
+    "pages/login/login",
+    "pages/timetable/timetable",
+    "pages/studyroomInquire/studyroomInquire",
+    "pages/examinationRoomCheck/examinationRoomCheck",
+    "pages/search/search",
+    "pages/person/person",
+   
     "pages/logs/logs"
   ],
   "window": {

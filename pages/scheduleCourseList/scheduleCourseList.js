@@ -1,74 +1,10 @@
 // pages/scheduleCourseList/scheduleCourseList.js
-// Page({
 
-//   /**
-//    * 页面的初始数据
-//    */
-//   data: {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面加载
-//    */
-//   onLoad: function (options) {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面初次渲染完成
-//    */
-//   onReady: function () {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面显示
-//    */
-//   onShow: function () {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面隐藏
-//    */
-//   onHide: function () {
-
-//   },
-
-//   /**
-//    * 生命周期函数--监听页面卸载
-//    */
-//   onUnload: function () {
-
-//   },
-
-//   /**
-//    * 页面相关事件处理函数--监听用户下拉动作
-//    */
-//   onPullDownRefresh: function () {
-
-//   },
-
-//   /**
-//    * 页面上拉触底事件的处理函数
-//    */
-//   onReachBottom: function () {
-
-//   },
-
-//   /**
-//    * 用户点击右上角分享
-//    */
-//   onShareAppMessage: function () {
-
-//   }
-// })
 const app = getApp()
 let page = 1;
 Page({
   data: {
-    ip:getApp().globalData.ip,
+    ip:getApp().globalData.ip2,
     IsSearchData: true,
     array: [
       
@@ -95,10 +31,9 @@ Page({
     teacherlists: [
       {
         id: 1,
-        name: 'cui',
-        time: [
-          '1-2'
-        ],
+        teacher: 'cui',
+        time: ['1-2'],
+          
         addclass: ''
       },
       {
@@ -109,7 +44,59 @@ Page({
         ],
         addclass: ''
       }
-    ]
+    ],
+    chooselists:[
+      {
+
+      }
+    ],
+    scrollHeight: 0,    //scroll区域高度
+    coverHeight:0,   //蒙版区域高度
+    IsCoverOpen:false,
+  },
+  //选中关闭蒙版
+  closeCoverClick:function(){
+    let that = this;
+    let timer;
+    this.setData({
+      IsCoverOpen:false,
+    })
+   
+
+  },
+  //将所选选项加入购物车2333
+  addToScheduleCart:function(e){
+    let arraytemp = [];
+    for (let i = 0; i < this.data.chooselists.length; i++) {
+      //if()   如果这个选项已经加入新选项
+      let index = this.data.chooselists[i] - 0;
+      let obj = this.data.teacherlists[index];
+      arraytemp.push(obj);
+    }
+    for (let j = 0; j < arraytemp.length; j++) {
+      getApp().globalData.scheduleCart.push(arraytemp);
+    }
+
+    console.log(arraytemp);
+    wx.showToast({
+      title: '添加成功!',
+      icon: 'none',
+      duration: 2000
+    })
+  },
+  //选中选项
+  checkboxChange:function(e){
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      chooselists:e.detail.value
+    })
+
+  },
+  //点击选项条
+  handleChooselistItemClick:function(e){
+    
+
+
   },
   //课程列表点击事件
   courselistClick: function (e) {
@@ -173,14 +160,18 @@ Page({
   },
   //事件处理函数
   labClick: function (e) {
-    let id = e.currentTarget.dataset.id;
-    console.log(id);
-    wx.navigateTo({
-      url: '../instruwithid/instruwithid?id=' + id,
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
+    let name = e.currentTarget.dataset.name;
+    let obj = {
+      name:name
+    }
+    this.getCourseDetail(obj);
+    if(!this.data.IsCoverOpen){
+      this.setData({
+        IsCoverOpen: true,
+      })
+    }
+
+   
   },
   //搜索功能触发
   searchClick: function (e) {
@@ -189,9 +180,75 @@ Page({
     this.getCourseList();
 
   },
+  /**
+  * 获取scroll区域的高度
+  */
+  getScrollHeight: function () {
+    let that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        let clientHeight = res.windowHeight;
+        let clientWidth = res.windowWidth;
+        let ratio = 750 / clientWidth;
+        let height = clientHeight * ratio;
+        let temp = 700-200;
+        that.setData({
+          scrollHeight: temp
+        })
+      }
+    });
+  },
+  //获取课程具体信息
+  getCourseDetail:function({name:name}){
+    // wx.showLoading({
+    //   title: '玩命加载中',
+    //   duration: 2000
+    // })
+    let that = this;
+    let ip = this.data.ip;
+    wx.request({
+      url: ip + '/find_classes/specialClassInfo?name=' + name, // 仅为示例，并非真实的接口地址
+      data: {
 
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        if (res.data.statu == 1) {
+          let array_list = [];
+          let obj;
+          let len;
+
+          for (let i = 0, len = res.data.data.length; i < len; i++) {
+            //for(let j = 0; j < res.data.data[i].time.length; j++){
+              obj = {
+                index:i,
+                id: res.data.data[i].id,
+                teacher: res.data.data[i].teacher,
+                time: res.data.data[i].time
+             // }
+            }
+
+            array_list.push(obj);
+          }
+          // 设置数据
+          that.setData({
+            teacherlists: array_list
+          })
+          // 隐藏加载框
+          wx.hideLoading();
+
+        }
+      }
+    })
+  },
   //获取课程默认列表
   getCourseList: function () {
+    wx.showLoading({
+      title: '玩命加载中',
+      duration: 2000
+    })
     let that = this;
     let content = this.data.inputdata;
     let ip = this.data.ip;
@@ -208,10 +265,7 @@ Page({
           let array_list = [];
           let obj;
           let len;
-          wx.showLoading({
-            title: '玩命加载中',
-            duration: 2000
-          })
+  
           for (let i = 0, len = res.data.data.length; i < len; i++) {
             obj = {
               title: res.data.data[i]
@@ -235,6 +289,7 @@ Page({
     //初始化实验室情况
 
     this.getCourseList();
+    this.getScrollHeight();
 
 
 

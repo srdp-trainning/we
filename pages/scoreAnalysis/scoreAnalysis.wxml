@@ -18,7 +18,7 @@
   <view class='banner'>
     <view class='words'>
       <text>你好, {{schoolname}}</text>
-      <text>加权平均分:90</text>
+      <text>加权平均分:{{weightAverage}}</text>
       <text>你还没有挂科哦，继续保持呀~</text>
     </view>
     

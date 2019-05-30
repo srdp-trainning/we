@@ -5,15 +5,17 @@ const app = getApp()
 Page({
   data: {
     isUserLogin:'',
-    ip: 'https://uclass.ktchen.cn:442/uclass',
+    ip: getApp().globalData.ip,
     array:[
       {
         text: "成绩查询",
-        imageurl:'../../images/score.png'
+        imageurl:'../../images/score.png',
+        url:"../../pages/scoreList2/scoreList2",
       },
       {
         text: "考场查询",
-        imageurl:'../../images/examine.png'
+        imageurl:'../../images/examine.png',
+        url:'../../pages/examinationRoomCheck/examinationRoomCheck'
       },
       {
         text:"自习室",
@@ -26,19 +28,33 @@ Page({
       },
       {
         text:'成绩分析',
-        imageurl:'../../images/analysis.png'
+        imageurl:'../../images/analysis.png',
+        url: '../../pages/scoreAnalysis/scoreAnalysis'
       },
       {
         text:'自动排课',
-        imageurl:'../../images/autoschedule.png'
+        imageurl:'../../images/autoschedule.png',
+        url:'../../pages/scheduleCourseList/scheduleCourseList'
       },
       {
         text:'通知信息',
         imageurl:'../../images/autoschedule.png',
         url:'../../pages/test/test'
-      }
+      },
+      {
+        text: '更多功能',
+        imageurl: '../../images/autoschedule.png',
+      },
+      {
+        text: '我的图书馆',
+        imageurl: '../../images/autoschedule.png',
+        url: '../../pages/bookList/bookList'
+      },
+      
 
     ],
+    displayItem:[0,1,2,3,4,5,6,7],
+    is_short_display: 1,
     imgUrls: [
       '../../images/banner1.png',
       '../../images/banner2.png',
@@ -130,7 +146,25 @@ Page({
     })
 
   },
- 
+  
+  moreFunction: function(e){
+
+    if(this.data.is_short_display){
+      this.setData({
+        ['array[7].text']:"收起功能",
+        is_short_display: 0,
+        displayItem: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+      });
+    }
+    else{
+      this.setData({
+        ['array[7].text']: "更多功能",
+        is_short_display: 1,
+        displayItem: [0, 1, 2, 3, 4, 5, 6, 7]
+      });
+    }
+  },
+
   onLoad: function () {
     this.setData({
       isUserLogin: getApp().globalData.isUserLogin
@@ -139,6 +173,7 @@ Page({
       url: '/timetable?'
 
     })
+    
   },
   onShow:function(){
     this.onLoad();

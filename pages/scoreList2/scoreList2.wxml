@@ -1,0 +1,62 @@
+<!--pages/scoreList2/scoreList2.wxml-->
+<!--pages/scoreAnalysis/scoreAnalysis.wxml-->
+<view class='container'>
+<view class="navbar" style="{{'height: ' + navigationBarHeight}}">
+  <view style="{{'height: ' + statusBarHeight}}"></view>
+  <view class='title-container'>
+    <view class='capsule' wx:if="{{ back || home }}">
+      <view bindtap='back' wx:if="{{back}}">
+        <image src='img/back.svg'></image>            
+      </view>
+      <view bindtap='backHome' wx:if="{{home}}">
+        <image src='img/home.svg'></image>
+      </view>
+    </view>
+    <view class='title'>{{text}}</view>
+  </view>
+</view>
+
+  <view class='banner'>
+    <view class='words'>
+      <text>学号：{{studentNumber}}</text>
+      <text>已修学分：{{haveCredit}}</text>
+      <text>加权平均分: {{weightAverage}}</text>
+      <text>GPA：</text>
+    </view>
+    
+    <image src='../../images/scoreList.png' mode='widthFix'></image>
+  </view>
+  <view class='mainer'>
+    <view class='top'>
+   <checkbox-group bindchange="checkIsAll">
+    <checkbox value="" checked="{{isAllchecked}}"/>
+      </checkbox-group>
+      全选
+    </view>
+    <checkbox-group bindchange="scorelistChange">
+      <view class='courses'>
+    <scroll-view scroll-y class='mainer-content-inner' style="height:{{scrollHeight}}rpx" 
+      scroll-top="100"> 
+        <view  class='course' wx:for="{{scorelist}}">
+          <checkbox value="{{item.id}}" checked="{{item.isChecked}}" />
+          <view>
+            <view class='course-block'>
+            <view class='course-name'>{{item.className}}</view>
+            
+            </view>
+            <view class='course-block'>
+              <view class='course-time'>
+                学分：{{item.credit}}            
+              </view>
+              <view class='score'>成绩：{{item.score}}</view>
+              <view class='gpa'>GPA：0</view>
+            </view>
+          </view>
+       
+        </view>
+           </scroll-view>
+      </view>
+    </checkbox-group>
+  </view>
+</view>
+

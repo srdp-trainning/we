@@ -38,7 +38,7 @@
   margin-right: 66rpx;
   margin-top: 30rpx;
 }
-.menu .menu-button:nth-child(4){
+.menu .menu-button:nth-child(4n){
   margin-right: 0;
 }
 .menu-button .circle{

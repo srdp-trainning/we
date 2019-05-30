@@ -1,0 +1,26 @@
+<!--pages/bookContent/bookContent.wxml-->
+<view class='container'>
+  <view class='book-detail'>
+    <image src='{{imgsrc}}' mode='widthFix' class='book-pic'>
+
+    </image>
+    <view class='right'>
+      <view>
+        <view class='title'>{{book.title}}</view>
+          <view class='style1'>责任者：{{book.author}}</view>
+          <view class='style1'>出版信息：{{book.publisher}} / {{book.pubYear}}</view>
+          <view class='style1'>ISBN：{{book.isbn}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='collection-detail'>
+      <view class='title'>馆藏详情</view>
+      <view class='lists'>
+        <view class='list-item' wx:for="{{collectionList}}">
+          <view class='bookNum '>{{item.bookNum}}</view>
+          <view class='adderss style1'>{{item.adderss}}</view>
+          <view class='status style1'>{{item.collect}}{{item.status}}</view>
+        </view>
+      </view>
+    </view>
+</view>

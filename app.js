@@ -43,7 +43,12 @@ App({
   globalData: {
     userInfo: null,
     isUserLogin:false,
-    ip: 'https://uclass.ktchen.cn:442',
-    
+    ip: 'https://itstudio.club:442/uclass',
+    ip2: 'https://itstudio.club:442/xietan',
+    // ip:'https://uclass.ktchen.cn:442/uclass',
+    sear:"library",
+    scheduleCart:[
+      
+    ]
   }
 })

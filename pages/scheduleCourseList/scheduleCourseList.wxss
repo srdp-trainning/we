@@ -119,6 +119,15 @@ button{
   left: 0;
   z-index: 100;
   background-color: white;
+  transform: translateY(800rpx);
+  -webkit-transform: translateY(800rpx);
+  transition: all .2s cubic-bezier(.25,.5,.5,.9);
+  -webkit-transition: all .2s cubic-bezier(.25,.5,.5,.9);
+}
+
+.an{
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
 }
 .teacher-content-wrap{
   width: 750rpx;
@@ -140,4 +149,32 @@ button{
 }
 .chosen-style1{
   background-color: red;
+}
+.chooselist-item{
+  display: flex;
+  align-items: center;
+  word-wrap: break-word;
+  border:1rpx solid black;
+  margin:30rpx 0 30rpx 0;
+  padding: 30rpx;
+  font-size: 32rpx;
+  
+}
+.chooselist{
+ padding: 0 30rpx 0 30rpx;
+}
+.chooselist-item view{
+ 
+}
+
+.button-wrap{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: wheat;
 }
